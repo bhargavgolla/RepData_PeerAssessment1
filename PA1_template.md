@@ -11,7 +11,8 @@ output:
 
 We load data using `read.csv()` and convert the date column into dates.
 
-```{r loaddata, echo=TRUE}
+
+```r
 activity_data <- read.csv(unz('activity.zip', 'activity.csv'),
                           stringsAsFactor = FALSE)
 # Convert Date to date types
@@ -22,7 +23,8 @@ activity_data[, 2] = as.Date(activity_data[, 2])
 
 ### Histogram of the total number of steps taken each day
 
-```{r histogram, echo=TRUE}
+
+```r
 steps_by_days <- aggregate(steps ~ date, data = activity_data, sum,
                            na.rm = TRUE)
 
@@ -32,21 +34,25 @@ qplot(steps, data = steps_by_days, geom = 'histogram',
     main = "Total steps per day - Histogram", binwidth = 1000)
 ```
 
+![plot of chunk histogram](figure/histogram-1.png) 
+
 ### Mean and median of total number of steps taken per day
 
-```{r meanmedian, echo = TRUE}
+
+```r
 step_mean <- mean(steps_by_days$steps)
 step_median <- median(steps_by_days$steps)
 ```
-* The mean number of steps taken per day = `r step_mean`
-* The median number of steps taken per day = `r step_median`
+* The mean number of steps taken per day = 1.0766189 &times; 10<sup>4</sup>
+* The median number of steps taken per day = 10765
 
 
 ## What is the average daily activity pattern?
 
 ### Time series plot of 5-minute interval and average number of steps taken
 
-```{r timeseries, echo = TRUE}
+
+```r
 steps_by_interval <- aggregate(steps ~ interval,
                                data = activity_data,
                                mean, na.rm = TRUE)
@@ -54,13 +60,16 @@ qplot(data = steps_by_interval, x = interval, y = steps,
     ylab = "Average steps", main = "Time series plot") + geom_line()
 ```
 
+![plot of chunk timeseries](figure/timeseries-1.png) 
+
 ### 5-minute interval containing the maximum number of steps
 
-```{r maxInterval, echo = TRUE}
+
+```r
 max_interval <- steps_by_interval[which.max(steps_by_interval$steps),]$interval
 ```
 The 5 minute interval that contains the maximum number of steps is
-`r max_interval`.
+835.
 
 
 
