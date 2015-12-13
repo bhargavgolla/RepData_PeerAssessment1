@@ -43,8 +43,8 @@ qplot(steps, data = steps_by_days, geom = 'histogram',
 step_mean <- mean(steps_by_days$steps)
 step_median <- median(steps_by_days$steps)
 ```
-* The mean number of steps taken per day = 1.0766189 &times; 10<sup>4</sup>
-* The median number of steps taken per day = 10765
+* The mean number of steps taken per day = **1.0766189 &times; 10<sup>4</sup>**
+* The median number of steps taken per day = **10765**
 
 
 ## What is the average daily activity pattern?
@@ -69,7 +69,7 @@ qplot(data = steps_by_interval, x = interval, y = steps,
 max_interval <- steps_by_interval[which.max(steps_by_interval$steps),]$interval
 ```
 The 5 minute interval that contains the maximum number of steps is
-835.
+**835**.
 
 ## Imputing missing values
 
@@ -79,11 +79,11 @@ The 5 minute interval that contains the maximum number of steps is
 ```r
 missing_vals <- sum(is.na(activity_data))
 ```
-There are 2304 missing values in the dataset.
+There are **2304 missing values** in the dataset.
 
 ### Strategy for filling in missing values
 
-We could use the strategy of filling in missing values with mean for that
+We could use the strategy of filling in **missing values with mean** for that
  interval. The function to get steps given interval is as follows:
 
 
@@ -133,10 +133,10 @@ filled_step_mean <- mean(filled_steps_by_days$steps)
 filled_step_median <- median(filled_steps_by_days$steps)
 ```
 * The mean number of steps taken per day, in the filled dataset
-= 1.0766189 &times; 10<sup>4</sup>, where as the mean was 1.0766189 &times; 10<sup>4</sup> in original data
+= **1.0766189 &times; 10<sup>4</sup>**, where as the mean was **1.0766189 &times; 10<sup>4</sup>** in original data
 * The median number of steps taken per day, in the filled dataset
-= 1.0766189 &times; 10<sup>4</sup>, where as the median was
-10765 in original data
+= **1.0766189 &times; 10<sup>4</sup>**, where as the median was
+**10765** in original data
 
 ## Are there differences in activity patterns between weekdays and weekends?
 

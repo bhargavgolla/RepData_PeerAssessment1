@@ -235,8 +235,8 @@ step_median &lt;- median(steps_by_days$steps)
 </code></pre>
 
 <ul>
-<li>The mean number of steps taken per day = 1.0766189 &times; 10<sup>4</sup></li>
-<li>The median number of steps taken per day = 10765</li>
+<li>The mean number of steps taken per day = <strong>1.0766189 &times; 10<sup>4</sup></strong></li>
+<li>The median number of steps taken per day = <strong>10765</strong></li>
 </ul>
 
 <h2>What is the average daily activity pattern?</h2>
@@ -258,7 +258,7 @@ qplot(data = steps_by_interval, x = interval, y = steps,
 </code></pre>
 
 <p>The 5 minute interval that contains the maximum number of steps is
-835.</p>
+<strong>835</strong>.</p>
 
 <h2>Imputing missing values</h2>
 
@@ -267,11 +267,11 @@ qplot(data = steps_by_interval, x = interval, y = steps,
 <pre><code class="r">missing_vals &lt;- sum(is.na(activity_data))
 </code></pre>
 
-<p>There are 2304 missing values in the dataset.</p>
+<p>There are <strong>2304 missing values</strong> in the dataset.</p>
 
 <h3>Strategy for filling in missing values</h3>
 
-<p>We could use the strategy of filling in missing values with mean for that
+<p>We could use the strategy of filling in <strong>missing values with mean</strong> for that
  interval. The function to get steps given interval is as follows:</p>
 
 <pre><code class="r">intervalToSteps &lt;- function(interval) {
@@ -315,10 +315,10 @@ filled_step_median &lt;- median(filled_steps_by_days$steps)
 
 <ul>
 <li>The mean number of steps taken per day, in the filled dataset
-= 1.0766189 &times; 10<sup>4</sup>, where as the mean was 1.0766189 &times; 10<sup>4</sup> in original data</li>
+= <strong>1.0766189 &times; 10<sup>4</sup></strong>, where as the mean was <strong>1.0766189 &times; 10<sup>4</sup></strong> in original data</li>
 <li>The median number of steps taken per day, in the filled dataset
-= 1.0766189 &times; 10<sup>4</sup>, where as the median was
-10765 in original data</li>
+= <strong>1.0766189 &times; 10<sup>4</sup></strong>, where as the median was
+<strong>10765</strong> in original data</li>
 </ul>
 
 <h2>Are there differences in activity patterns between weekdays and weekends?</h2>
