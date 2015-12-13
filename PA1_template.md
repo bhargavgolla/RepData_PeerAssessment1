@@ -154,12 +154,12 @@ filled_activity_data$day <- factor(filled_activity_data$day,
 
 
 ```r
-library(lattice)
 steps_by_interval_days <- aggregate(steps ~ interval + day,
                                data = filled_activity_data,
                                mean, na.rm = TRUE)
 
 # To get the plot as displayed in Coursera
+# library(lattice)
 # xyplot(steps ~ interval | factor(day), data = steps_by_interval_days,
 #       aspect = 1/2, type = "l")
 
